@@ -20,15 +20,14 @@ import java.util.logging.Logger;
  */
 public class ChatBoxServer {
 
-
-    public static void main(String[] args) {
         int port = 8000;
         DataInputStream in;
         DataOutputStream out;
         ServerSocket server;
         Socket socket;
         
-        
+    
+    public ChatBoxServer(){ 
         try {
             server = new ServerSocket(port);
             socket = server.accept();
@@ -49,7 +48,8 @@ public class ChatBoxServer {
             Logger.getLogger(ChatBoxServer.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+      
     }
+
     
 }
