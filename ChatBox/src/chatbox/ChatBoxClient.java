@@ -10,6 +10,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
  *
@@ -27,9 +28,17 @@ public class ChatBoxClient {
     try {
             socket = new Socket(host, port);
             
-            System.out.println("Enter a number:");
             in = new DataInputStream(socket.getInputStream());
-            //out = new DataOutputStream(socket.getOutputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+
+            Scanner input = new Scanner(System.in);
+
+            System.out.println("Enter a number:");
+            while(input.hasNextDouble())
+            {
+                out.writeDouble(input.nextDouble());
+                System.out.println("Enter a number:");
+            }
             
             
         } catch (IOException ex) {

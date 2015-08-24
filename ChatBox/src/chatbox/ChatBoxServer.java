@@ -42,9 +42,12 @@ public class ChatBoxServer {
             double num;
             
             System.out.println("Waiting on client to input");
-            num = in.readDouble();
             
-            System.out.println(num);
+            while(true)
+            {
+                num = in.readDouble();
+                System.out.println(num);
+            }
             
         } catch (IOException ex) {
             Logger.getLogger(ChatBoxServer.class.getName()).log(Level.SEVERE, null, ex);
