@@ -27,6 +27,7 @@ public class ChatBoxClient {
     try {
             socket = new Socket(host, port);
             
+            System.out.println("Enter a number:");
             in = new DataInputStream(socket.getInputStream());
             //out = new DataOutputStream(socket.getOutputStream());
             
@@ -37,4 +38,11 @@ public class ChatBoxClient {
         }
     
     }
+
+
+
+    public static void main(String args[]) {
+        new ChatBoxClient();
+    }
+
 }

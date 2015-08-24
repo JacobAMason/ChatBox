@@ -30,6 +30,7 @@ public class ChatBoxServer {
     public ChatBoxServer(){ 
         try {
             server = new ServerSocket(port);
+            System.out.println("Waiting on client to connect");
             socket = server.accept();
             
             
@@ -40,6 +41,7 @@ public class ChatBoxServer {
             
             double num;
             
+            System.out.println("Waiting on client to input");
             num = in.readDouble();
             
             System.out.println(num);
@@ -51,5 +53,9 @@ public class ChatBoxServer {
       
     }
 
+    
+    public static void main(String args[]) {
+        new ChatBoxServer();
+    }
     
 }
