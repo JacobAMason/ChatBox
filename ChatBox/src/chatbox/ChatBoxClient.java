@@ -8,6 +8,7 @@ package chatbox;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
 
 /**
@@ -21,4 +22,19 @@ public class ChatBoxClient {
     DataOutputStream out;
     Socket socket;
     
+    public ChatBoxClient(){
+        
+    try {
+            socket = new Socket(host, port);
+            
+            in = new DataInputStream(socket.getInputStream());
+            //out = new DataOutputStream(socket.getOutputStream());
+            
+            
+        } catch (IOException ex) {
+            System.out.println("IO Exception:");
+            ex.printStackTrace();
+        }
+    
+    }
 }
